@@ -37,8 +37,9 @@ export default function Home() {
     setDeduct(_deduct);
 
     // Calculate net pay
+
     let _total = _gross - _deduct;
-    setTotal(_total);
+    setTotal(_total / 2);
   };
 
   return (
@@ -83,8 +84,11 @@ export default function Home() {
                 </Col>
                 <br />
                 <br />
-                <span className="font-black">Overtime Pay</span>
-                <span>{overtimePay}</span>
+                <Col className="flex justify-between">
+                  <span className="font-black">Overtime Pay</span>
+                  <span>{overtimePay}</span>
+                </Col>
+
                 <br />
                 <br />
                 <h3>Less</h3>
@@ -154,8 +158,11 @@ export default function Home() {
                   <h6>{overtimeTime}</h6>
                 </Col>
                 <br />
-                <span className="font-black">Gross Pay</span>
-                <span>{gross}</span>
+                <Col className="flex justify-between">
+                  <span className="font-black">Gross Pay</span>
+                  <span>{gross}</span>
+                </Col>
+
                 <br />
                 <br />
                 <h3>Less</h3>
@@ -176,22 +183,29 @@ export default function Home() {
                 </Col>
                 <br />
                 <br />
-                <span className="font-black">Total Deduct: </span>
-                <span>{deduct}</span>
+                <Col className="flex justify-between">
+                  <span className="font-black">Total Deduct: </span>
+                  <span>{deduct}</span>
+                </Col>
+
                 <br />
-                <span className="font-black">Net Pay: </span>
-                <span>{total}</span>
+                <Col className="flex justify-between">
+                  <span className="font-black">Net Pay: </span>
+                  <span>{total}</span>
+                </Col>
+
                 <br />
                 <br />
                 <br />
-                <div className="flex justify-center"></div>
-                <Button
-                  className="justify-self-center"
-                  variant="dark"
-                  onClick={() => alert("Total : " + total)}
-                >
-                  Print
-                </Button>
+                <div className="flex justify-center">
+                  <Button
+                    className="justify-self-center"
+                    variant="dark"
+                    onClick={() => alert("Total : " + total)}
+                  >
+                    Print
+                  </Button>
+                </div>
               </div>
             </Col>
           </Row>
